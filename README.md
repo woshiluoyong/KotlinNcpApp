@@ -6,4 +6,4 @@
 
 >接口地址Get获取：`https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5`
 
->app查看[地址]：(https://www.pgyer.com/H6pm),查看密码：`1234`
+>app查看[地址](https://www.pgyer.com/H6pm) 查看密码：`1234`
