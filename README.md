@@ -5,3 +5,5 @@
 >ui界面参考页面：`https://news.qq.com/zt2020/page/feiyan.htm?from=timeline&isappinstalled=0`
 
 >接口地址Get获取：`https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5`
+
+>[app查看地址：](https://www.pgyer.com/H6pm),查看密码：`1234`
