@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">NCP疫情数据</string>
+    <string name="about_info">希望疫情赶快过去，春乱花开-By逆水寒</string>
+    <string name="technology_info">本应用采用kotlin语言编写，应用到其中的协程实现线程切换，采用MVP模式实现，还用到了Anko、RxJava、Retrofit、MaterialDesign相关技术</string>
+</resources>

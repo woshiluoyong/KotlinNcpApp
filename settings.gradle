@@ -1,0 +1,2 @@
+include ':TestJava', ':KotlinDemo'
+rootProject.name='KotlinApplication'

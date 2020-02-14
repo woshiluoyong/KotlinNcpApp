@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menuBtn"
+        android:title="Menu"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/goToBtn"
+        android:title="News"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/topInfoBtn"
+        android:icon="@drawable/logo"
+        android:title="AnkoTest"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/upgradeBtn"
+        android:icon="@drawable/logo"
+        android:title="Upgrade"
+        app:showAsAction="never"/>
+</menu>

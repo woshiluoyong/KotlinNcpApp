@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:orientation="horizontal">
+
+    <com.caveman.timeaxis.weight.TimeAxisView
+        android:id="@+id/lineT"
+        android:layout_width="100dp"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/infoLy"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:id="@+id/newsTitleT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:text="@string/app_name"/>
+
+        <TextView
+            android:id="@+id/newsContentT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="6dp"
+            android:textSize="13dp"
+            android:textColor="@color/gray"
+            android:text="@string/app_name"/>
+
+        <TextView
+            android:id="@+id/newsFromT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13dp"
+            android:textColor="@color/black"
+            android:text="@string/app_name"/>
+    </LinearLayout>
+</LinearLayout>
