@@ -20,7 +20,7 @@
             app:logoDescription="logo desc"
             app:title="疫情实时追踪"
             app:titleTextColor="@color/white"
-            app:subtitle="新型冠状病毒肺炎"
+            app:subtitle="新型冠状病毒nCoV"
             app:subtitleTextColor="@color/wheat"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent">
@@ -64,7 +64,7 @@
                         android:id="@+id/topDateT"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="统计截止0000-00-00 00:00:00"
+                        android:text="统计截止:0000-00-00 00:00:00"
                         android:textSize="15sp"
                         android:textColor="@color/gray"
                         android:paddingLeft="10dp"
@@ -80,6 +80,47 @@
                         android:paddingRight="10dp"
                         android:orientation="horizontal"
                         app:layout_constraintTop_toBottomOf="@id/topDateT">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:orientation="vertical"
+                            android:background="#fff8ed">
+                            <TextView
+                                android:id="@+id/addData4T"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="较上日+0000"
+                                android:textSize="10sp"
+                                android:textColor="@color/gray"
+                                android:lines="1"
+                                android:ellipsize="end"/>
+                            <TextView
+                                android:id="@+id/curData4T"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:text="00000"
+                                android:textSize="20sp"
+                                android:textColor="#ff3753"
+                                android:textStyle="bold"
+                                android:lines="1"
+                                android:ellipsize="end"/>
+                            <TextView
+                                android:id="@+id/title4T"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="现有确诊"
+                                android:textSize="14sp"
+                                android:textColor="@color/black"
+                                android:lines="1"
+                                android:ellipsize="end"/>
+                        </LinearLayout>
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -106,7 +147,7 @@
                                 android:layout_marginBottom="10dp"
                                 android:text="00000"
                                 android:textSize="20sp"
-                                android:textColor="#ff3753"
+                                android:textColor="#d6001d"
                                 android:textStyle="bold"
                                 android:lines="1"
                                 android:ellipsize="end"/>
@@ -114,7 +155,7 @@
                                 android:id="@+id/title0T"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="全国确诊"
+                                android:text="累计确诊"
                                 android:textSize="14sp"
                                 android:textColor="@color/black"
                                 android:lines="1"
@@ -155,7 +196,58 @@
                                 android:id="@+id/title1T"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="疑似病例"
+                                android:text="现有疑似"
+                                android:textSize="14sp"
+                                android:textColor="@color/black"
+                                android:lines="1"
+                                android:ellipsize="end"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/mainInfo2Ly"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintTop_toBottomOf="@id/mainInfoLy">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginRight="5dp"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:orientation="vertical"
+                            android:background="#fef0f1">
+                            <TextView
+                                android:id="@+id/addData5T"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="较上日+0000"
+                                android:textSize="10sp"
+                                android:textColor="@color/gray"
+                                android:lines="1"
+                                android:ellipsize="end"/>
+                            <TextView
+                                android:id="@+id/curData5T"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:text="00000"
+                                android:textSize="20sp"
+                                android:textColor="#d50080"
+                                android:textStyle="bold"
+                                android:lines="1"
+                                android:ellipsize="end"/>
+                            <TextView
+                                android:id="@+id/title5T"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="现有重症"
                                 android:textSize="14sp"
                                 android:textColor="@color/black"
                                 android:lines="1"
@@ -253,7 +345,7 @@
                         android:textColor="@color/black"
                         android:paddingLeft="10dp"
                         android:layout_marginTop="15dp"
-                        app:layout_constraintTop_toBottomOf="@id/mainInfoLy"/>
+                        app:layout_constraintTop_toBottomOf="@id/mainInfo2Ly"/>
                     <TextView
                         android:id="@+id/expandDescV"
                         android:layout_width="match_parent"
@@ -376,7 +468,7 @@
             android:layout_height="0dp"
             android:layout_gravity="start"
             android:gravity="center"
-            android:text="数据加载失败(先检查哈网络),点击重试!"
+            android:text="数据加载失败(请先检查哈打开网络没)\n点击可重试!"
             android:textColor="#7f7f7f"
             android:background="@color/white"
             android:visibility="gone"

@@ -1,5 +1,6 @@
 package  com.stephen.kotlin.demo.mvp.model
 
+import android.text.TextUtils
 import com.google.gson.Gson
 import com.stephen.kotlin.demo.api.IHttpProtocol
 import com.stephen.kotlin.demo.bean.MainData
@@ -49,7 +50,7 @@ class MainModel : BaseModel(), MainContract.IModel {
                 },
                 {
                     System.out.println("=============网络请求处理异常======>$it")
-                    if(isSetListener())callListener.onFailure("返回数据异常!")
+                    if(isSetListener())callListener.onFailure(if(null != it && !TextUtils.isEmpty(it.message)) it.message else "返回数据异常!")
                 }
             )
     }

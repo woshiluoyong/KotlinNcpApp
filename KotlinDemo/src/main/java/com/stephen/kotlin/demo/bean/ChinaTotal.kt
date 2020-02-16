@@ -4,5 +4,7 @@ data class ChinaTotal(
     val confirm: Int,
     val dead: Int,
     val heal: Int,
-    val suspect: Int
+    val suspect: Int,
+    val nowConfirm: Int,
+    val nowSevere: Int
 )

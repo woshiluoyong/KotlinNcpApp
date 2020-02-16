@@ -1,8 +1,9 @@
 package com.stephen.kotlin.demo.mvp
 
-import android.view.View
 import android.widget.RelativeLayout
 import androidx.core.content.res.ResourcesCompat
+import cn.jiguang.analytics.android.api.CountEvent
+import cn.jiguang.analytics.android.api.JAnalyticsInterface
 import com.stephen.kotlin.demo.R
 import com.stephen.kotlin.demo.mvp.view.act.TestAnkoActivity
 import org.jetbrains.anko.*
@@ -17,6 +18,9 @@ class AnkoActivityUi : AnkoComponent<TestAnkoActivity>{
                 textColor = ResourcesCompat.getColor(resources, R.color.colorPrimary, null)
                 onClick {
                     toast("click:$text")
+                    val countEvent = CountEvent("ClickAnkoText")
+                    countEvent.addKeyValue("data", "$text")
+                    JAnalyticsInterface.onEvent(context, countEvent)
                 }
             }
             val editE = editText("AnkoInfo"){
@@ -29,6 +33,9 @@ class AnkoActivityUi : AnkoComponent<TestAnkoActivity>{
             button("AnkoBtn"){
                 onClick {
                     toast("click:${editE.text}")
+                    val countEvent = CountEvent("ClickAnkoBtn")
+                    countEvent.addKeyValue("data", "${editE.text}")
+                    JAnalyticsInterface.onEvent(context, countEvent)
                 }
             }.lparams {
                 margin = dip(10)

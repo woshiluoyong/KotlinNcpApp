@@ -30,7 +30,8 @@ class NewsAdapter : TimeAxisAdapter<Article>{
         val mTimeAxisView: TimeAxisView = holder!!.getView(R.id.lineT)
         mTimeAxisView.setBigText(article.publish_time)
         mTimeAxisView.setSmallText(context?.resources?.getString(R.string.app_name))
-        mTimeAxisView.setBigTextSize(25f)
+        mTimeAxisView.setBigTextSize(22f)
+        mTimeAxisView.setSmallTextSize(20f)
         if (article.can_use === 1) {//根据状态设置圆圈样式
             mTimeAxisView.setCircleShape(TimeAxisView.SOLID_CIRCLE)
         } else if (article.can_use === 0) {
@@ -44,7 +45,7 @@ class NewsAdapter : TimeAxisAdapter<Article>{
         holder.setText(R.id.newsFromT, "来源:${article.media}")
 
         holder.getView<View>(R.id.infoLy).setOnClickListener {
-            context?.toast("正在打开网页中...")
+            context?.toast("正在打开新闻中...")
             context?.browse(article.url)
         }
     }

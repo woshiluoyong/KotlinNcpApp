@@ -5,6 +5,8 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import cn.jiguang.analytics.android.api.CountEvent
+import cn.jiguang.analytics.android.api.JAnalyticsInterface
 import com.google.android.material.snackbar.Snackbar
 import com.stephen.kotlin.demo.MainApplication
 import com.stephen.kotlin.demo.NewsAdapter
@@ -41,6 +43,7 @@ class MvpActivity : AppCompatActivity(), MsgContract.IView {
         floatBtn.setOnClickListener {
             Snackbar.make(coordinatorLy, "MvpSave", Snackbar.LENGTH_LONG).setAction("Save") {
                 mMsgPresenter.saveMsgToModel(resources.getString(R.string.about_info))
+                JAnalyticsInterface.onEvent(applicationContext, CountEvent("MvpSave"))
             }.show()
         }
 
@@ -48,6 +51,7 @@ class MvpActivity : AppCompatActivity(), MsgContract.IView {
             override fun onClick(p0: View?) {
                 Snackbar.make(coordinatorLy, "MvpLoad", Snackbar.LENGTH_INDEFINITE).setAction("Load") {
                     mMsgPresenter.loadMsgFromShow()
+                    JAnalyticsInterface.onEvent(applicationContext, CountEvent("MvpLoad"))
                 }.show()
             }
         })

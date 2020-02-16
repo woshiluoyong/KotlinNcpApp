@@ -61,6 +61,7 @@ class ExpandAdapter(val context: Context,val mGroup: ArrayList<Children>,val mIt
         view!!.findViewById<TextView>(R.id.info4T)?.text = "${mGroup[groupPosition].total.deadRate}%" ?: "-%"
         view!!.findViewById<ImageView>(R.id.arrowImgV)?.setImageDrawable(ResourcesCompat.getDrawable(context.resources,
             if(isExpanded) R.drawable.icon_arrow_up else R.drawable.icon_arrow_down, null))
+        view!!.tag = mGroup[groupPosition].name ?: "-"
         return view
     }
 
@@ -75,9 +76,10 @@ class ExpandAdapter(val context: Context,val mGroup: ArrayList<Children>,val mIt
         view!!.findViewById<TextView>(R.id.info2T)?.text = "${child.total.heal}" ?: "-"
         view!!.findViewById<TextView>(R.id.info3T)?.text = "${child.total.dead}" ?: "-"
         view!!.findViewById<TextView>(R.id.info4T)?.text = "${child.total.deadRate}%" ?: "-%"
-        tvChild.setOnClickListener{
+        view!!.tag = child.name ?: "-"
+        /*tvChild.setOnClickListener{
             Toast.makeText(context, "===>$child", Toast.LENGTH_LONG).show()
-        }
+        }*/
         return view
     }
 
