@@ -14,8 +14,8 @@ android {
         applicationId "com.stephen.kotlin.demo"
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 3
-        versionName "1.2"
+        versionCode 4
+        versionName "1.3"
 
         manifestPlaceholders = [
             JPUSH_APPKEY : "186e290e6e62f5b017a8d3ac", //JPush上注册的包名对应的appkey.

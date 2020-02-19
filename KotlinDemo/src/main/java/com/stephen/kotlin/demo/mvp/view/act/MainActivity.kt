@@ -211,19 +211,19 @@ class MainActivity : BaseMvpAppCompatActivity<MainContract.IPresenter>() , MainC
 
             val suspectVal = if(mainData.chinaDayAddList.isNotEmpty()) {mainData.chinaDayAddList[mainData.chinaDayAddList.size - 1].suspect ?: 0} else 0
 
-            val data0Str = SpannableString("较上日+${if(null != mainData.chinaAdd) mainData.chinaAdd.confirm else 0}")
-            data0Str.setSpan(ForegroundColorSpan(Color.parseColor("#d6001d")), data0Str.indexOf("+"), data0Str.length, SpannableString.SPAN_INCLUSIVE_EXCLUSIVE)
+            val data0Str = SpannableString("较上日${ToolUtil.getInstance(this).checkPlusOrMinus(if(null != mainData.chinaAdd) mainData.chinaAdd.confirm else 0)}")
+            data0Str.setSpan(ForegroundColorSpan(Color.parseColor("#d6001d")), data0Str.indexOf("较上日"), data0Str.length, SpannableString.SPAN_INCLUSIVE_EXCLUSIVE)
             addData0T.text = data0Str
-            addData1T.text = "较上日+$suspectVal"
-            val data2Str = SpannableString("较上日+${if(null != mainData.chinaAdd) mainData.chinaAdd.heal else 0}")
-            data2Str.setSpan(ForegroundColorSpan(Color.parseColor("#009352")), data2Str.indexOf("+"), data2Str.length, SpannableString.SPAN_INCLUSIVE_EXCLUSIVE)
+            addData1T.text = "较上日${ToolUtil.getInstance(this).checkPlusOrMinus(suspectVal)}"
+            val data2Str = SpannableString("较上日${ToolUtil.getInstance(this).checkPlusOrMinus(if(null != mainData.chinaAdd) mainData.chinaAdd.heal else 0)}")
+            data2Str.setSpan(ForegroundColorSpan(Color.parseColor("#009352")), data2Str.indexOf("较上日"), data2Str.length, SpannableString.SPAN_INCLUSIVE_EXCLUSIVE)
             addData2T.text = data2Str
-            addData3T.text = "较上日+${if(null != mainData.chinaAdd) mainData.chinaAdd.dead else 0}"
-            val data4Str = SpannableString("较上日+${if(null != mainData.chinaAdd) mainData.chinaAdd.nowConfirm else 0}")
-            data4Str.setSpan(ForegroundColorSpan(Color.parseColor("#ff3753")), data4Str.indexOf("+"), data4Str.length, SpannableString.SPAN_INCLUSIVE_EXCLUSIVE)
+            addData3T.text = "较上日${ToolUtil.getInstance(this).checkPlusOrMinus(if(null != mainData.chinaAdd) mainData.chinaAdd.dead else 0)}"
+            val data4Str = SpannableString("较上日${ToolUtil.getInstance(this).checkPlusOrMinus(if(null != mainData.chinaAdd) mainData.chinaAdd.nowConfirm else 0)}")
+            data4Str.setSpan(ForegroundColorSpan(Color.parseColor("#ff3753")), data4Str.indexOf("较上日"), data4Str.length, SpannableString.SPAN_INCLUSIVE_EXCLUSIVE)
             addData4T.text = data4Str
-            val data5Str = SpannableString("较上日+${if(null != mainData.chinaAdd) mainData.chinaAdd.nowSevere else 0}")
-            data5Str.setSpan(ForegroundColorSpan(Color.parseColor("#d50080")), data5Str.indexOf("+"), data5Str.length, SpannableString.SPAN_INCLUSIVE_EXCLUSIVE)
+            val data5Str = SpannableString("较上日${ToolUtil.getInstance(this).checkPlusOrMinus(if(null != mainData.chinaAdd) mainData.chinaAdd.nowSevere else 0)}")
+            data5Str.setSpan(ForegroundColorSpan(Color.parseColor("#d50080")), data5Str.indexOf("较上日"), data5Str.length, SpannableString.SPAN_INCLUSIVE_EXCLUSIVE)
             addData5T.text = data5Str
 
             curData0T.text = "${if(null != mainData.chinaTotal) mainData.chinaTotal.confirm else 0}"

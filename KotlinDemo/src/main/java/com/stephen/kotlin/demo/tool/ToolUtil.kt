@@ -15,4 +15,8 @@ class ToolUtil private constructor(private val context: Context){
         f()
         return true
     }
+
+    fun checkPlusOrMinus(numVal: Int): String{
+        return "${if(numVal < 0) "" else "+"}$numVal"
+    }
 }
